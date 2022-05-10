@@ -1,0 +1,128 @@
+h1 {
+	background-color:red;
+}	
+
+
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.split {
+  width: 750px;
+  height: 468px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 400px;
+  cursor: pointer;
+
+  &:before {
+    content: 'CLICK';
+    color: #777;
+    letter-spacing: 1px;
+    font-size: 10px;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+    opacity: 0;
+  }
+
+  div {
+    position: absolute;
+    z-index: 1;
+    background-repeat: no-repeat;
+    transform: rotateY(-50deg) scale(0.5);
+    opacity: 0;
+    transform-origin: bottom;
+    transition: all .6s cubic-bezier(.71, .05, .09, .91);
+  }
+
+  &.active {
+    div {
+      opacity: 1;
+      transform: rotate(0deg) translateY(0);
+    }
+  }
+}
+ 
+ .dondurulecekler {
+    perspective: 1000;
+}
+ 
+.dondurulecekler:hover .tetikleyici, .dondurulecekler.hover .tetikleyici {
+    transform: rotateY(180deg);
+}
+
+.dondurulecekler, .onyuz{
+    width: 300px;
+    height: 300px;
+}
+ 
+.onyuz {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+.arkayuz {
+    background-color:#5bc0de;
+    border-radius:100%;
+    text-align:center;
+    color:white;
+    width: 200px;
+    height: 200px;
+    padding:50px;
+    box-shadow:inset 0px 0px 0px 5px #46b8da;
+    transform: rotateY(180deg);
+}
+.tetikleyici {
+    transition: 0.4s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+ 
+.onyuz, .arkayuz {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.arkayuz h1{
+    margin:15px 0;
+    font-size:20px;
+    color:white;
+    font-weight:700;
+}
+ 
+.arkayuz hr{
+    border:1px solid #46b8da;
+    margin:15px 0;
+}
+ 
+.arkayuz p{
+    font-size:16px;
+    color:white;
+    line-height:170%;
+}
+
+<style>
+
+@media screen and (max-width: 600px) {
+
+  body {
+
+    background-color: blue;
+
+  }
+
+}
+
+</style>
